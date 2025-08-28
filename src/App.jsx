@@ -16,14 +16,22 @@ export default function App() {
     setUniversities([]);
 
     try {
-      const res = await fetch(`https://cors-anywhere.herokuapp.com/https://universities.hipolabs.com/search?country=${country}`);
+      const apiUrl = `http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`;
+      console.log('Fetching from:', apiUrl);
 
+      const res = await fetch(apiUrl);
+      console.log("Response status:", res.status);
 
-      if (!res.ok) throw new Error("Failed to fetch data");
+      if (!res.ok)
+        throw new Error(
+          `Failed to fetch data: ${res.status} ${res.statusText}`
+        );
       const data = await res.json();
+      console.log("Fetched data:", data);
       setUniversities(data);
     } catch (err) {
-      setError("❌ Something went wrong. Try again!");
+      console.error("Fetch error:", err);
+      setError(`❌ Something went wrong: ${err.message}`);
     } finally {
       setLoading(false);
     }
@@ -35,12 +43,14 @@ export default function App() {
       <header className="hero">
         <div className="hero-content">
           <h1>🎓 University Finder</h1>
-          <p>Discover universities worldwide by searching with a country name.</p>
+          <p>
+            Discover universities worldwide by searching with a country name.
+          </p>
 
           <form onSubmit={fetchUniversities} className="search-form">
             <input
               type="text"
-              placeholder="Enter country name..."
+              placeholder="Enter country name (e.g., India, United States, Canada)..."
               value={country}
               onChange={(e) => setCountry(e.target.value)}
             />
