@@ -16,9 +16,8 @@ export default function App() {
     setUniversities([]);
 
     try {
-      const res = await fetch(
-        `https://universities.hipolabs.com/search?country=${country}`
-      );
+      const res = await fetch(`https://cors-anywhere.herokuapp.com/https://universities.hipolabs.com/search?country=${country}`);
+
 
       if (!res.ok) throw new Error("Failed to fetch data");
       const data = await res.json();
