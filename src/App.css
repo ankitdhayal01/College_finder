@@ -1,0 +1,147 @@
+/* Global */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  background: #f4f7fb;
+  color: #2c3e50;
+}
+
+h1, h3, p {
+  margin: 0;
+}
+
+/* header*/
+.hero {
+  background: linear-gradient(135deg, #4e54c8, #65466c);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  margin-top: 1px;
+  
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.search-form input {
+  padding: 14px;
+  width: 280px;
+  border: none;
+  border-radius: 12px;
+  margin-right: 12px;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.search-form button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #ff9800;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+
+.search-form button:hover {
+  background: #e68900;
+}
+
+/* Status messages */
+.status {
+  text-align: center;
+  margin: 20px;
+}
+.loading {
+  color: #4e54c8;
+  font-weight: bold;
+}
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+/* Results Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card-header {
+  background: #f4f7fb;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-body p {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.card-body a {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #4e54c8;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.card-body a:hover {
+  background: #3b40a0;
+}
+
+/* Footer */
+.footer {
+  background: #2c3e50;   
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  width: 100%;           
+  position: fixed;       
+  bottom: 0;
+  left: 0;
+}
+
