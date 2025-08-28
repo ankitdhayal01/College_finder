@@ -17,7 +17,7 @@ export default function App() {
 
     try {
       const res = await fetch(
-        `http://universities.hipolabs.com/search?country=${country}`
+        `https://universities.hipolabs.com/search?country=${country}`
       );
 
       if (!res.ok) throw new Error("Failed to fetch data");
@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <div>
-      {/* Hero Section */}
+      {/* Header */}
       <header className="hero">
         <div className="hero-content">
           <h1>🎓 University Finder</h1>
