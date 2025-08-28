@@ -16,7 +16,7 @@ export default function App() {
     setUniversities([]);
 
     try {
-      const apiUrl = `http://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`;
+      const apiUrl = `https://universities.hipolabs.com/search?country=${encodeURIComponent(country)}`;
       console.log('Fetching from:', apiUrl);
 
       const res = await fetch(apiUrl);
